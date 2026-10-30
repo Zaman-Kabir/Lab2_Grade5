@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,12 +31,19 @@
     </header>
 
     <main>
+
         <section>
             <h2>My Skills</h2>
-            <p>Explore the skills I am developing during my learning journey.</p>
+
+            <p>
+                Explore the skills I am developing during my learning journey.
+            </p>
 
             <div class="skills-controls">
-                <label for="categoryFilter">Filter by category</label>
+
+                <label for="categoryFilter">
+                    Filter by category
+                </label>
 
                 <select id="categoryFilter">
                     <option value="all">All categories</option>
@@ -45,101 +52,79 @@
                     <option value="professional">Professional Skills</option>
                 </select>
 
-                <label for="skillSort">Sort skills</label>
+                <label for="skillSort">
+                    Sort skills
+                </label>
 
                 <select id="skillSort">
                     <option value="default">Default order</option>
                     <option value="az">Name: A to Z</option>
                     <option value="za">Name: Z to A</option>
                 </select>
+
             </div>
 
-            <p id="skillCount" aria-live="polite">Showing 8 skills</p>
+            <p id="skillCount" aria-live="polite">
+                Showing 8 of 8 skills
+            </p>
+
+            <!-- JavaScript will create the skill cards here -->
 
             <div id="skillsContainer" class="skills-grid">
-
-                <article class="skill-card" data-category="web" data-name="HTML">
-                    <h3>HTML</h3>
-                    <p>Learning to structure webpages with semantic HTML elements.</p>
-                    <span>Web Development</span>
-                </article>
-
-                <article class="skill-card" data-category="web" data-name="CSS">
-                    <h3>CSS</h3>
-                    <p>Learning to style webpages with colors, spacing and layouts.</p>
-                    <span>Web Development</span>
-                </article>
-
-                <article class="skill-card" data-category="programming" data-name="JavaScript">
-                    <h3>JavaScript</h3>
-                    <p>Learning to make webpages interactive with programming.</p>
-                    <span>Programming</span>
-                </article>
-
-                <article class="skill-card" data-category="programming" data-name="Python">
-                    <h3>Python</h3>
-                    <p>Practising beginner programming exercises and logical thinking.</p>
-                    <span>Programming</span>
-                </article>
-
-                <article class="skill-card" data-category="web" data-name="Responsive Design">
-                    <h3>Responsive Design</h3>
-                    <p>Learning to adapt webpage layouts to different screen sizes.</p>
-                    <span>Web Development</span>
-                </article>
-
-                <article class="skill-card" data-category="programming" data-name="Problem Solving">
-                    <h3>Problem Solving</h3>
-                    <p>Practising how to break a problem into smaller steps.</p>
-                    <span>Programming</span>
-                </article>
-
-                <article class="skill-card" data-category="professional" data-name="Communication">
-                    <h3>Communication</h3>
-                    <p>Developing the ability to explain ideas clearly and work with others.</p>
-                    <span>Professional Skills</span>
-                </article>
-
-                <article class="skill-card" data-category="professional" data-name="Continuous Learning">
-                    <h3>Continuous Learning</h3>
-                    <p>Building knowledge through practice, feedback and reflection.</p>
-                    <span>Professional Skills</span>
-                </article>
-
             </div>
 
             <p id="noSkillsMessage" hidden>
                 No skills found in this category.
             </p>
+
         </section>
 
         <section id="a11yPanel" aria-labelledby="a11yHeading">
-            <h2 id="a11yHeading">Accessibility Settings</h2>
+
+            <h2 id="a11yHeading">
+                Accessibility Settings
+            </h2>
 
             <p>
                 Customize the text size and contrast to make this page easier to read.
             </p>
 
             <div class="a11y-controls">
+
                 <span>Text size:</span>
 
-                <button type="button" data-text-size="small" aria-pressed="false">
+                <button
+                    type="button"
+                    data-text-size="small"
+                    aria-pressed="false">
                     Small
                 </button>
 
-                <button type="button" data-text-size="medium" aria-pressed="true">
+                <button
+                    type="button"
+                    data-text-size="medium"
+                    aria-pressed="true">
                     Medium
                 </button>
 
-                <button type="button" data-text-size="large" aria-pressed="false">
+                <button
+                    type="button"
+                    data-text-size="large"
+                    aria-pressed="false">
                     Large
                 </button>
 
-                <button type="button" id="contrastToggle" aria-pressed="false">
+                <button
+                    type="button"
+                    id="contrastToggle"
+                    aria-pressed="false">
                     Turn on High Contrast
                 </button>
+
             </div>
+
         </section>
+
     </main>
 
     <footer>
@@ -147,4 +132,5 @@
     </footer>
 
 </body>
+
 </html>
