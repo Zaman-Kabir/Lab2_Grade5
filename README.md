@@ -44,6 +44,11 @@ The website was developed using HTML, CSS and Vanilla JavaScript.
 - js/ – JavaScript files
 - images/ – Website images
 - screenshots/ – Screenshots showing project features and testing
+- TESTING.md – Project testing checklist and results
+
+## Testing
+
+Project testing details and verification results are documented in [TESTING.md](TESTING.md).
 
 ## How to Run the Project
 
