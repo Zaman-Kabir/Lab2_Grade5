@@ -43,6 +43,7 @@ The website was developed using HTML, CSS and Vanilla JavaScript.
 - skills.css – Skills page styles
 - js/ – JavaScript files
 - images/ – Website images
+- screenshots/ – Screenshots showing project features and testing
 
 ## How to Run the Project
 
