@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio | About</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="js/a11y.css">
+
+    <script src="js/a11y.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Portfolio</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="skills.html">Skills</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>About Me</h2>
+
+            <p>
+                I have always been interested in technology and computers from a young age.
+                However, due to different circumstances, I did not have the opportunity to
+                pursue a technology-related path earlier.
+            </p>
+
+            <p>
+                I continued my studies in other fields and later completed my Master's degree
+                in Economics in Germany. As technology has become an increasingly important
+                part of almost every field, I started thinking about exploring my long-standing
+                interest in technology more seriously.
+            </p>
+
+            <p>
+                This motivated me to make a career change and begin studying software
+                development. I am now at the beginning of this new journey, learning new
+                skills and developing my knowledge step by step.
+            </p>
+        </section>
+
+        <section>
+            <h2>My Skills</h2>
+
+            <div class="skill">
+                <h3>HTML</h3>
+                <p><strong>Proficiency:</strong> Beginner</p>
+
+                <p>
+                    Before starting this course, I only knew that HTML was used to create
+                    websites. Apart from that, I did not really understand how HTML worked,
+                    how a webpage was structured, or how different HTML elements were used.
+                    I started learning HTML as a complete beginner.
+                </p>
+
+                <p>
+                    Through this portfolio project, I am gradually learning how to use
+                    headings, paragraphs, sections, links, images, forms, and other HTML
+                    elements to build and organize a webpage.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>CSS</h3>
+                <p><strong>Proficiency:</strong> Beginner</p>
+
+                <p>
+                    Before starting this course, I had no previous knowledge of CSS.
+                    It was completely new to me, and I started learning it from the very
+                    beginning.
+                </p>
+
+                <p>
+                    While working on this portfolio, I have gradually started to understand
+                    how CSS is used to style a webpage, including changing colors, spacing,
+                    layout, and the appearance of different elements. I am still a beginner,
+                    but I am learning step by step through practice.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>My Experience</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <h3>Starting My Learning Journey</h3>
+
+                    <p>
+                        I started studying Software Engineering last month after previously
+                        studying in a completely different academic field. Because of this
+                        change in background, most of the concepts in software development
+                        are new to me, and I still find some parts challenging.
+                    </p>
+
+                    <p>
+                        However, I am trying to learn step by step and gradually become more
+                        comfortable with the subject. My wife is also studying in the same
+                        field and started her studies last year. Seeing her journey and
+                        experience encouraged me and played an important role in inspiring
+                        me to choose this new path.
+                    </p>
+
+                    <p>
+                        I hope that with time, practice, and continuous learning, I will be
+                        able to develop my skills and become more confident in software
+                        development.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Building My Portfolio</h3>
+
+                    <p>
+                        Building this portfolio website has been a completely new experience
+                        for me. When I started, I had very little knowledge about how to build
+                        a website, so I have been learning gradually throughout the process.
+                    </p>
+
+                    <p>
+                        One of the most challenging parts for me has been understanding the
+                        code and learning which code is used for a particular purpose and how
+                        it affects the webpage. As a beginner, I still find coding challenging,
+                        but I am becoming more familiar with it through practice.
+                    </p>
+
+                    <p>
+                        One part that I have found particularly interesting is CSS. I enjoy
+                        seeing how styling can change a simple webpage and make it more
+                        visually attractive and engaging for the person visiting the website.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Accessibility Settings -->
+        <section id="a11yPanel" aria-labelledby="a11yHeading">
+
+            <h2 id="a11yHeading">Accessibility Settings</h2>
+
+            <p>
+                Customize the text size and contrast to make this page easier to read.
+            </p>
+
+            <div class="a11y-controls">
+
+                <span>Text size:</span>
+
+                <button
+                    type="button"
+                    data-text-size="small"
+                    aria-pressed="false">
+                    Small
+                </button>
+
+                <button
+                    type="button"
+                    data-text-size="medium"
+                    aria-pressed="true">
+                    Medium
+                </button>
+
+                <button
+                    type="button"
+                    data-text-size="large"
+                    aria-pressed="false">
+                    Large
+                </button>
+
+                <button
+                    type="button"
+                    id="contrastToggle"
+                    aria-pressed="false">
+                    Turn on High Contrast
+                </button>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

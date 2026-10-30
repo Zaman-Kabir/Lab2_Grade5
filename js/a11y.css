@@ -1,0 +1,126 @@
+/* Accessibility settings */
+
+#a11yPanel {
+    margin: 25px 0;
+    padding: 20px;
+    background-color: var(--light-color);
+    border: 2px solid var(--dark-color);
+    border-radius: 10px;
+}
+
+#a11yPanel h2 {
+    margin-top: 0;
+}
+
+.a11y-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.a11y-controls button {
+    padding: 10px 16px;
+    border: 2px solid var(--dark-color);
+    border-radius: 5px;
+    background-color: white;
+    color: var(--dark-color);
+    font: inherit;
+    cursor: pointer;
+}
+
+.a11y-controls button:hover,
+.a11y-controls button[aria-pressed="true"] {
+    background-color: var(--dark-color);
+    color: white;
+}
+
+.a11y-controls button:focus-visible {
+    outline: 3px solid #b00020;
+    outline-offset: 3px;
+}
+
+/* Text sizes */
+
+body.text-small {
+    font-size: 14px;
+}
+
+body.text-medium {
+    font-size: 16px;
+}
+
+body.text-large {
+    font-size: 20px;
+}
+
+/* High contrast mode */
+
+body.high-contrast {
+    background-color: #000;
+    color: #fff;
+}
+
+body.high-contrast header,
+body.high-contrast main,
+body.high-contrast section,
+body.high-contrast footer,
+body.high-contrast article,
+body.high-contrast #a11yPanel {
+    background-color: #000;
+    color: #fff;
+    border-color: #ff0;
+}
+
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast p,
+body.high-contrast label,
+body.high-contrast li,
+body.high-contrast a,
+body.high-contrast span {
+    color: #fff;
+}
+
+body.high-contrast a {
+    text-decoration: underline;
+}
+
+body.high-contrast input,
+body.high-contrast select,
+body.high-contrast textarea {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #ff0;
+}
+
+body.high-contrast button {
+    background-color: #000;
+    color: #ff0;
+    border: 2px solid #ff0;
+}
+
+body.high-contrast button:focus-visible,
+body.high-contrast a:focus-visible,
+body.high-contrast input:focus-visible,
+body.high-contrast select:focus-visible,
+body.high-contrast textarea:focus-visible {
+    outline: 3px solid #ff0;
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    #a11yPanel {
+        padding: 15px;
+    }
+
+    .a11y-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .a11y-controls button {
+        width: 100%;
+    }
+}

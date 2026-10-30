@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio | Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="js/a11y.css">
+
+    <script src="js/a11y.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Portfolio</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="skills.html">Skills</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Nature Photography</h2>
+
+            <p>
+                This gallery showcases nine nature photographs taken by me.
+            </p>
+
+            <div class="gallery">
+
+                <figure>
+                    <img src="images/nature-1.jpg"
+                        alt="A road surrounded by rows of green trees in Germany.">
+                    <figcaption>
+                        A peaceful tree-lined path in Germany.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/nature-2.jpg"
+                        alt="A wooden observation stand in an open field under a cloudy sky in Germany.">
+                    <figcaption>
+                        A quiet countryside view in Germany.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/nature-3.jpg"
+                        alt="A wide field beneath large white and grey clouds in Germany.">
+                    <figcaption>
+                        An open field under a beautiful sky in Germany.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/nature-4.jpg"
+                        alt="A green lizard resting among plants and rocks at Berlin Zoo in Germany.">
+                    <figcaption>
+                        A moment from my visit to Berlin Zoo.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/nature-5.jpg"
+                        alt="A wide view of water, trees and a cloudy blue sky in Norrköping, Sweden.">
+                    <figcaption>
+                        A peaceful waterside view in Norrköping, Sweden.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/nature-6.jpg"
+                        alt="A close-up of small white flowers with yellow centres in Germany.">
+                    <figcaption>
+                        Small white flowers in bloom in Germany.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/nature-7.jpg"
+                        alt="A row of trees beneath large white clouds and a blue sky in Germany.">
+                    <figcaption>
+                        A beautiful cloudy sky over the German countryside.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/nature-8.jpg"
+                        alt="Green fields leading towards houses and hills in Germany.">
+                    <figcaption>
+                        A peaceful countryside landscape in Germany.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/nature-9.jpg"
+                        alt="Electricity pylons standing in a green field beneath a cloudy sky in Germany.">
+                    <figcaption>
+                        A green landscape under a cloudy sky in Germany.
+                    </figcaption>
+                </figure>
+
+            </div>
+        </section>
+
+        <!-- Accessibility Settings -->
+        <section id="a11yPanel" aria-labelledby="a11yHeading">
+
+            <h2 id="a11yHeading">Accessibility Settings</h2>
+
+            <p>
+                Customize the text size and contrast to make this page easier to read.
+            </p>
+
+            <div class="a11y-controls">
+
+                <span>Text size:</span>
+
+                <button
+                    type="button"
+                    data-text-size="small"
+                    aria-pressed="false">
+                    Small
+                </button>
+
+                <button
+                    type="button"
+                    data-text-size="medium"
+                    aria-pressed="true">
+                    Medium
+                </button>
+
+                <button
+                    type="button"
+                    data-text-size="large"
+                    aria-pressed="false">
+                    Large
+                </button>
+
+                <button
+                    type="button"
+                    id="contrastToggle"
+                    aria-pressed="false">
+                    Turn on High Contrast
+                </button>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

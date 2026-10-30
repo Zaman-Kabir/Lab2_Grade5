@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Feedback Form | My Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="feedback.css">
+    <link rel="stylesheet" href="js/a11y.css">
+
+    <script src="js/feedback.js" defer></script>
+    <script src="js/a11y.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="feedback.html" class="active">Feedback</a>
+            <a href="skills.html">Skills</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Feedback Form</h2>
+            <p>Share your feedback about my portfolio.</p>
+
+            <form id="feedbackForm" novalidate>
+                <label for="fullName">Full Name</label>
+                <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    autocomplete="name"
+                    required
+                    aria-describedby="fullNameError"
+                >
+                <span id="fullNameError" class="error" aria-live="polite"></span>
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                    aria-describedby="emailError"
+                >
+                <span id="emailError" class="error" aria-live="polite"></span>
+
+                <label for="topic">Topic of Interest</label>
+                <select
+                    id="topic"
+                    name="topic"
+                    required
+                    aria-describedby="topicError"
+                >
+                    <option value="">Choose a topic</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="html-css">HTML and CSS</option>
+                    <option value="javascript">JavaScript</option>
+                </select>
+                <span id="topicError" class="error" aria-live="polite"></span>
+
+                <label for="comments">Comments</label>
+                <textarea
+                    id="comments"
+                    name="comments"
+                    rows="5"
+                    required
+                    minlength="15"
+                    aria-describedby="commentsError commentsCounter"
+                ></textarea>
+
+                <p id="commentsCounter" aria-live="polite">
+                    0 characters (minimum 15)
+                </p>
+                <span id="commentsError" class="error" aria-live="polite"></span>
+
+                <label for="website">Website (optional)</label>
+                <input
+                    type="url"
+                    id="website"
+                    name="website"
+                    autocomplete="url"
+                    placeholder="https://example.com"
+                    aria-describedby="websiteError"
+                >
+                <span id="websiteError" class="error" aria-live="polite"></span>
+
+                <button type="submit">Submit Feedback</button>
+                <button type="reset">Clear</button>
+
+                <p id="formStatus" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section id="a11yPanel" aria-labelledby="a11yHeading">
+            <h2 id="a11yHeading">Accessibility Settings</h2>
+
+            <p>
+                Customize the text size and contrast to make this page easier to read.
+            </p>
+
+            <div class="a11y-controls">
+                <span>Text size:</span>
+
+                <button type="button" data-text-size="small" aria-pressed="false">
+                    Small
+                </button>
+
+                <button type="button" data-text-size="medium" aria-pressed="true">
+                    Medium
+                </button>
+
+                <button type="button" data-text-size="large" aria-pressed="false">
+                    Large
+                </button>
+
+                <button type="button" id="contrastToggle" aria-pressed="false">
+                    Turn on High Contrast
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

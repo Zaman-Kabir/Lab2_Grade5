@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio | Projects</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="js/a11y.css">
+
+    <script src="js/a11y.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Portfolio</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="skills.html">Skills</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>My Projects</h2>
+            <p>
+                This page showcases projects and exercises from my learning journey.
+            </p>
+        </section>
+
+        <section>
+            <h2>Project 1</h2>
+
+            <div class="project-card">
+                <h3>Personal Portfolio Website</h3>
+
+                <p>
+                    This project is a personal portfolio website that I am building
+                    while learning the fundamentals of HTML and CSS.
+                </p>
+
+                <h4>Challenge</h4>
+
+                <p>
+                    Building a personal portfolio website was a completely new experience
+                    for me because I had very little previous knowledge of web development.
+                    As a beginner, I found many parts of the process challenging, especially
+                    understanding the code and knowing which code should be used and where
+                    it should be placed.
+                </p>
+
+                <p>
+                    Even small steps sometimes felt difficult because I was still learning
+                    how HTML and CSS work together. I approached the project gradually,
+                    working through each step and trying to understand the purpose of the
+                    code as I progressed.
+                </p>
+
+                <h4>Solution</h4>
+
+                <p>
+                    To manage these challenges, I tried to work on the project step by step
+                    instead of attempting everything at once. I used course materials and
+                    other learning resources to understand the concepts and find guidance
+                    when I was unsure about something.
+                </p>
+
+                <p>
+                    I first focused on creating the basic HTML structure and then gradually
+                    worked on the CSS styling and other features. Breaking the project into
+                    smaller tasks made the process easier to follow and helped me understand
+                    how the different parts of the website work together.
+                </p>
+
+                <h4>What I Learned</h4>
+
+                <p>
+                    As a beginner, I understand that it is not possible to learn everything
+                    about web development in a short period of time. However, working on this
+                    project has given me a basic understanding of how a website is created
+                    and how HTML and CSS work together.
+                </p>
+
+                <p>
+                    I have started to understand how HTML provides the structure of a webpage
+                    and how CSS can be used to change its appearance and layout. Most
+                    importantly, this project has shown me that learning web development is
+                    a gradual process, and I need to continue practising to improve my skills.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Project 2</h2>
+
+            <div class="project-card">
+                <h3>Beginner Python Exercises</h3>
+
+                <p>
+                    As part of my introduction to programming, I have been working on
+                    small beginner-level Python exercises. These exercises are part of
+                    my early learning process and have helped me become more familiar
+                    with programming and the basic idea of writing and running code.
+                </p>
+
+                <h4>Challenge</h4>
+
+                <p>
+                    Since programming is new to me, understanding the logic behind the
+                    code has been one of the main challenges. At the beginning, even
+                    simple exercises could be difficult because I needed to understand
+                    what each part of the code was doing and how the different parts
+                    worked together.
+                </p>
+
+                <h4>Solution</h4>
+
+                <p>
+                    I approached the exercises gradually and tried to work through them
+                    step by step. When I found something difficult, I reviewed the
+                    learning materials and practised similar examples to understand the
+                    concept better. Repeating basic exercises has helped me become more
+                    familiar with Python.
+                </p>
+
+                <h4>What I Learned</h4>
+
+                <p>
+                    These exercises have given me an introduction to programming with
+                    Python. I am still at the beginner stage, but I have started to
+                    understand how programming requires both logical thinking and
+                    practice. I have also learned that making mistakes and correcting
+                    them is a normal part of learning to code.
+                </p>
+            </div>
+        </section>
+
+        <!-- Accessibility Settings -->
+        <section id="a11yPanel" aria-labelledby="a11yHeading">
+
+            <h2 id="a11yHeading">Accessibility Settings</h2>
+
+            <p>
+                Customize the text size and contrast to make this page easier to read.
+            </p>
+
+            <div class="a11y-controls">
+
+                <span>Text size:</span>
+
+                <button
+                    type="button"
+                    data-text-size="small"
+                    aria-pressed="false">
+                    Small
+                </button>
+
+                <button
+                    type="button"
+                    data-text-size="medium"
+                    aria-pressed="true">
+                    Medium
+                </button>
+
+                <button
+                    type="button"
+                    data-text-size="large"
+                    aria-pressed="false">
+                    Large
+                </button>
+
+                <button
+                    type="button"
+                    id="contrastToggle"
+                    aria-pressed="false">
+                    Turn on High Contrast
+                </button>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

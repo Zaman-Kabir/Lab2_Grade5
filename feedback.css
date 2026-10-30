@@ -1,0 +1,102 @@
+
+/* Feedback form design */
+
+main section:has(#feedbackForm) {
+    background-color: var(--light-color);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+#feedbackForm {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#feedbackForm label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+#feedbackForm input,
+#feedbackForm select,
+#feedbackForm textarea {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    font: inherit;
+    background-color: white;
+}
+
+#feedbackForm input:focus,
+#feedbackForm select:focus,
+#feedbackForm textarea:focus {
+    outline: 3px solid var(--dark-color);
+    outline-offset: 2px;
+}
+
+#feedbackForm button {
+    width: fit-content;
+    margin-top: 12px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--dark-color);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#feedbackForm button:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+#commentsCounter {
+    margin: 0;
+    font-size: 14px;
+}
+
+#feedbackForm span {
+    color: #b00020;
+    font-size: 14px;
+}
+
+/* Feedback status message */
+
+#formStatus {
+    display: block;
+    min-height: 24px;
+    margin: 16px 0;
+    padding: 12px;
+    color: #2f4f3a;
+    background-color: #f1f7ee;
+    border: 2px solid #2f4f3a;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Hide the status area when it has no message */
+
+#formStatus:empty {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    main section:has(#feedbackForm) {
+        padding: 20px;
+    }
+
+    #feedbackForm input,
+    #feedbackForm select,
+    #feedbackForm textarea {
+        max-width: 100%;
+    }
+}

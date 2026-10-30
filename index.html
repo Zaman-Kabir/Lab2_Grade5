@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio | Home</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="js/a11y.css">
+
+    <script src="js/a11y.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Portfolio</h1>
+
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="skills.html">Skills</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <p class="seed-mark">🍀 Clover Inspired Portfolio</p>
+
+            <h2>Welcome to My Portfolio</h2>
+
+            <p>
+                This is my personal portfolio website where I share
+                my learning journey, projects, and interests.
+            </p>
+
+            <a href="#contact" class="contact-link">Contact Me</a>
+        </section>
+
+        <section class="home-info">
+            <h2>What You'll Find Here</h2>
+
+            <p>
+                Explore my learning journey, projects, and nature photography
+                through the different pages of this portfolio.
+            </p>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>Contact Me</h2>
+
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Accessibility Settings -->
+        <section id="a11yPanel" aria-labelledby="a11yHeading">
+
+            <h2 id="a11yHeading">Accessibility Settings</h2>
+
+            <p>
+                Customize the text size and contrast to make this page easier to read.
+            </p>
+
+            <div class="a11y-controls">
+
+                <span>Text size:</span>
+
+                <button
+                    type="button"
+                    data-text-size="small"
+                    aria-pressed="false">
+                    Small
+                </button>
+
+                <button
+                    type="button"
+                    data-text-size="medium"
+                    aria-pressed="true">
+                    Medium
+                </button>
+
+                <button
+                    type="button"
+                    data-text-size="large"
+                    aria-pressed="false">
+                    Large
+                </button>
+
+                <button
+                    type="button"
+                    id="contrastToggle"
+                    aria-pressed="false">
+                    Turn on High Contrast
+                </button>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

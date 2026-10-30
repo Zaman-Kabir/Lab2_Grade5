@@ -1,0 +1,254 @@
+:root {
+    --primary-color: #b7d7a8;
+    --dark-color: #2f4f3a;
+    --light-color: white;
+    --card-color: #f1f7ee;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--primary-color);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: var(--light-color);
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+nav a.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+nav a:focus {
+    outline: 2px solid var(--light-color);
+    outline-offset: 4px;
+}
+
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.hero {
+    background-color: var(--light-color);
+    padding: 40px;
+    border-radius: 10px;
+    animation: fadeIn 0.8s ease;
+}
+
+.seed-mark {
+    color: var(--dark-color);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.contact-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 18px;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.home-info {
+    background-color: var(--light-color);
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+main section {
+    background-color: var(--light-color);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.skill {
+    background-color: var(--card-color);
+    padding: 20px;
+    margin-top: 20px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.timeline {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 20px;
+}
+
+.timeline-item {
+    background-color: var(--card-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.project-card {
+    background-color: var(--card-color);
+    padding: 25px;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery figure {
+    margin: 0;
+    background-color: var(--card-color);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.gallery figcaption {
+    margin-top: 10px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact input,
+.contact textarea {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact button {
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+.contact-link:focus,
+.contact button:focus {
+    outline: 3px solid var(--dark-color);
+    outline-offset: 3px;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: 2px solid var(--dark-color);
+    outline-offset: 2px;
+}
+
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .hero {
+        padding: 25px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
