@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,7 +71,12 @@
 
             <!-- JavaScript will create the skill cards here -->
 
-            <div id="skillsContainer" class="skills-grid">
+            <div
+                id="skillsContainer"
+                class="skills-grid"
+                aria-live="polite"
+                aria-atomic="false"
+                aria-relevant="additions removals">
             </div>
 
             <p id="noSkillsMessage" hidden>
@@ -92,6 +98,7 @@
             <div class="a11y-controls">
 
                 <div role="group" aria-label="Text size">
+
                     <span>Text size:</span>
 
                     <button
@@ -114,6 +121,7 @@
                         aria-pressed="false">
                         Large
                     </button>
+
                 </div>
 
                 <button
