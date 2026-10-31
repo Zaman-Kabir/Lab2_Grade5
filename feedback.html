@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,23 +111,27 @@
             </p>
 
             <div class="a11y-controls">
-                <span>Text size:</span>
 
-                <button type="button" data-text-size="small" aria-pressed="false">
-                    Small
-                </button>
+                <div role="group" aria-label="Text size">
+                    <span>Text size:</span>
 
-                <button type="button" data-text-size="medium" aria-pressed="true">
-                    Medium
-                </button>
+                    <button type="button" data-text-size="small" aria-pressed="false">
+                        Small
+                    </button>
 
-                <button type="button" data-text-size="large" aria-pressed="false">
-                    Large
-                </button>
+                    <button type="button" data-text-size="medium" aria-pressed="true">
+                        Medium
+                    </button>
+
+                    <button type="button" data-text-size="large" aria-pressed="false">
+                        Large
+                    </button>
+                </div>
 
                 <button type="button" id="contrastToggle" aria-pressed="false">
                     Turn on High Contrast
                 </button>
+
             </div>
         </section>
     </main>
