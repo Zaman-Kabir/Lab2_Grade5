@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const textSizeButtons = document.querySelectorAll("[data-text-size]");
@@ -6,6 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Available text sizes.
     const validTextSizes = ["small", "medium", "large"];
+
+    // Preference storage keys.
+    const TEXT_SIZE_KEY = "portfolioTextSize";
+    const CONTRAST_KEY = "portfolioHighContrast";
 
     // Safely read saved preferences.
     function getSavedPreference(key, defaultValue) {
@@ -26,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Apply accessibility settings.
-    function applySettings(textSize, highContrast) {
+    function applySettings(textSize, highContrast, shouldSave = true) {
 
         document.body.classList.remove(
             "text-small",
@@ -58,24 +61,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 : "Turn on High Contrast";
         }
 
-        // Save preferences safely.
-        savePreference("portfolioTextSize", textSize);
-        savePreference(
-            "portfolioHighContrast",
-            String(highContrast)
-        );
+        // Save preferences only when requested.
+        if (shouldSave) {
+            savePreference(TEXT_SIZE_KEY, textSize);
+            savePreference(CONTRAST_KEY, String(highContrast));
+        }
     }
 
     // Load saved preferences.
-    const savedSize = getSavedPreference(
-        "portfolioTextSize",
-        "medium"
-    );
+    const savedSize = getSavedPreference(TEXT_SIZE_KEY, "medium");
 
-    const savedContrast = getSavedPreference(
-        "portfolioHighContrast",
-        "false"
-    );
+    const savedContrast = getSavedPreference(CONTRAST_KEY, "false");
 
     // Validate saved text size.
     let currentSize = validTextSizes.includes(savedSize)
@@ -109,6 +105,52 @@ document.addEventListener("DOMContentLoaded", function () {
             applySettings(currentSize, currentContrast);
         });
     }
+
+    // Synchronize accessibility preferences across browser tabs.
+    window.addEventListener("storage", function (event) {
+
+        if (
+            event.key !== TEXT_SIZE_KEY &&
+            event.key !== CONTRAST_KEY &&
+            event.key !== null
+        ) {
+            return;
+        }
+
+        if (event.key === TEXT_SIZE_KEY) {
+            const newSize = event.newValue;
+
+            currentSize = validTextSizes.includes(newSize)
+                ? newSize
+                : "medium";
+        }
+
+        if (event.key === CONTRAST_KEY) {
+            currentContrast = event.newValue === "true";
+        }
+
+        // Handle localStorage being cleared.
+        if (event.key === null) {
+            const updatedSize = getSavedPreference(
+                TEXT_SIZE_KEY,
+                "medium"
+            );
+
+            const updatedContrast = getSavedPreference(
+                CONTRAST_KEY,
+                "false"
+            );
+
+            currentSize = validTextSizes.includes(updatedSize)
+                ? updatedSize
+                : "medium";
+
+            currentContrast = updatedContrast === "true";
+        }
+
+        // Update this tab without writing back to localStorage.
+        applySettings(currentSize, currentContrast, false);
+    });
 
     // Apply preferences when the page loads.
     applySettings(currentSize, currentContrast);
