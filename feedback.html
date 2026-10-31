@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,11 +38,19 @@
     <main id="main-content">
 
         <section aria-labelledby="feedbackHeading">
+
             <h2 id="feedbackHeading">Feedback Form</h2>
 
-            <p>Share your feedback about my portfolio.</p>
+            <p id="feedbackDescription">
+                Share your feedback about my portfolio.
+                Please complete the required fields before submitting.
+            </p>
 
-            <form id="feedbackForm" novalidate>
+            <form
+                id="feedbackForm"
+                novalidate
+                aria-labelledby="feedbackHeading"
+                aria-describedby="feedbackDescription">
 
                 <label for="fullName">Full Name</label>
                 <input
@@ -92,6 +101,7 @@
                 <p id="commentsCounter" aria-live="polite">
                     0 characters (minimum 15)
                 </p>
+
                 <span id="commentsError" class="error" aria-live="polite"></span>
 
                 <label for="website">Website (optional)</label>
@@ -113,6 +123,7 @@
             </form>
         </section>
 
+        <!-- Accessibility Settings -->
         <section id="a11yPanel" aria-labelledby="a11yHeading">
 
             <h2 id="a11yHeading">Accessibility Settings</h2>
