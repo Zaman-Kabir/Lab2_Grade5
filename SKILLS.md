@@ -1,17 +1,19 @@
-
 # Skills Showcase Documentation
 
 ## 1. Overview
 
 The portfolio website includes a dynamic skills showcase built using Vanilla JavaScript.
 
-It displays skills in an organized card layout.
+Skills are displayed in an organized card layout and can be filtered and sorted by users.
 
-## 2. Skills Data
+## 2. Skills Data Structure
 
-The skills are stored as JavaScript objects in an array.
+The skills are stored as JavaScript objects inside an array.
 
-Each skill contains information such as its name and category.
+Each skill object contains information such as:
+
+- Skill name
+- Skill category
 
 The showcase includes eight skills across three categories:
 
@@ -19,11 +21,15 @@ The showcase includes eight skills across three categories:
 - Programming
 - Professional Skills
 
+Using an array of objects makes the skills data easier to organize and maintain.
+
 ## 3. Dynamic Rendering
 
-JavaScript is used to generate skill cards dynamically from the skills data.
+JavaScript dynamically generates skill cards from the skills array.
 
-This makes it easier to manage and display the skills.
+The cards are created based on the available data rather than being individually written in HTML.
+
+This approach makes it easier to add, update, or manage skills.
 
 ## 4. Category Filtering
 
@@ -35,7 +41,9 @@ The available categories are:
 - Programming
 - Professional
 
-The displayed skill count updates when a category is selected.
+Only skills belonging to the selected category are displayed.
+
+The displayed skill count updates when the category changes.
 
 ## 5. Sorting
 
@@ -44,9 +52,17 @@ Users can sort skills alphabetically in two ways:
 - Name: A to Z
 - Name: Z to A
 
-Filtering and sorting can also be used together.
+Sorting changes the display order of the skills.
 
-## 6. Testing
+## 6. Combined Filtering and Sorting
+
+Users can apply category filtering and alphabetical sorting together.
+
+For example, users can select the Programming category and sort the matching skills from A to Z.
+
+The skill count reflects the filtered results.
+
+## 7. Testing
 
 The following features were tested manually:
 
@@ -58,6 +74,6 @@ The following features were tested manually:
 - [x] Filtering and sorting together
 - [x] Dynamic skill count
 
-## 7. Conclusion
+## 8. Conclusion
 
-The skills showcase demonstrates JavaScript objects, arrays, dynamic DOM rendering, filtering and sorting using Vanilla JavaScript.
+The skills showcase demonstrates JavaScript arrays, objects, dynamic DOM rendering, category filtering, alphabetical sorting, and combined operations using Vanilla JavaScript.
