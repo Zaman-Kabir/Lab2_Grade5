@@ -1,4 +1,3 @@
-
 # Project Testing Checklist
 
 ## 1. Feedback Form Testing
@@ -39,10 +38,21 @@
 - [x] Tested keyboard activation using Enter.
 - [x] Verified that preferences remain after refreshing the page.
 
-## 4. Testing Summary
+## 4. Responsive Design Testing
 
-The portfolio website was manually tested in the browser. The feedback form, skills filtering and sorting, and accessibility settings were tested. The tested features worked as expected.
+- [x] Tested the website on a desktop screen.
+- [x] Tested the website using a mobile-sized viewport.
+- [x] Verified that website content displays correctly on mobile.
 
-## 5. Notes
+## 5. JavaScript Console Testing
+
+- [x] Refreshed the website and checked the browser console.
+- [x] Verified that no JavaScript errors appeared in the console.
+
+## 6. Testing Summary
+
+The portfolio website was manually tested in the browser. The feedback form, skills filtering and sorting, accessibility settings, responsive layout and JavaScript console were checked. The tested features worked as expected.
+
+## 7. Notes
 
 The feedback form displays a confirmation message in the browser. It does not send or store feedback on a server.
