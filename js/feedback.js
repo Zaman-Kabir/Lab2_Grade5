@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("feedbackForm");
 
@@ -17,6 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let successMessageTimer;
     let preserveSuccessMessage = false;
+
+    // Improve screen reader announcements
+    commentsCounter.setAttribute("aria-live", "polite");
+    commentsCounter.setAttribute("aria-atomic", "true");
+
+    formStatus.setAttribute("role", "status");
+    formStatus.setAttribute("aria-live", "polite");
+    formStatus.setAttribute("aria-atomic", "true");
 
     const fields = [
         { input: fullName, error: document.getElementById("fullNameError") },
