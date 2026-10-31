@@ -19,9 +19,9 @@
     <header>
         <h1>My Portfolio</h1>
 
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="index.html">Home</a>
-            <a href="about.html" class="active">About</a>
+            <a href="about.html" class="active" aria-current="page">About</a>
             <a href="projects.html">Projects</a>
             <a href="gallery.html">Gallery</a>
             <a href="feedback.html">Feedback</a>
@@ -161,28 +161,30 @@
 
             <div class="a11y-controls">
 
-                <span>Text size:</span>
+                <div role="group" aria-label="Text size">
+                    <span>Text size:</span>
 
-                <button
-                    type="button"
-                    data-text-size="small"
-                    aria-pressed="false">
-                    Small
-                </button>
+                    <button
+                        type="button"
+                        data-text-size="small"
+                        aria-pressed="false">
+                        Small
+                    </button>
 
-                <button
-                    type="button"
-                    data-text-size="medium"
-                    aria-pressed="true">
-                    Medium
-                </button>
+                    <button
+                        type="button"
+                        data-text-size="medium"
+                        aria-pressed="true">
+                        Medium
+                    </button>
 
-                <button
-                    type="button"
-                    data-text-size="large"
-                    aria-pressed="false">
-                    Large
-                </button>
+                    <button
+                        type="button"
+                        data-text-size="large"
+                        aria-pressed="false">
+                        Large
+                    </button>
+                </div>
 
                 <button
                     type="button"
