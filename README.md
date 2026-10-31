@@ -4,9 +4,9 @@
 
 This is my personal portfolio website, developed as part of my JavaScript for Web Development course.
 
-The website presents my background, projects, photography gallery, skills and an interactive feedback form.
+The website presents my background, projects, photography gallery, skills, and an interactive feedback form.
 
-The project was developed using HTML5, CSS3 and Vanilla JavaScript, with a focus on accessibility, responsive design and interactive features.
+The project was developed using HTML5, CSS3, and Vanilla JavaScript, with a focus on accessibility, responsive design, and interactive features.
 
 ## Features
 
@@ -25,6 +25,7 @@ The project was developed using HTML5, CSS3 and Vanilla JavaScript, with a focus
 - Live character counter
 - Error messages
 - Success confirmation message
+- Clear form functionality
 
 ### Skills Showcase
 - Data-driven skills using JavaScript objects
@@ -36,12 +37,15 @@ The project was developed using HTML5, CSS3 and Vanilla JavaScript, with a focus
 - Dynamic skill count
 
 ### Accessibility Features
-- Small, Medium and Large text options
+- Small, Medium, and Large text options
 - Normal and High Contrast modes
 - Keyboard-accessible controls
+- Skip navigation for keyboard users
+- Reduced motion support
 - ARIA attributes for improved screen reader support
 - Accessibility preferences saved using localStorage
 - Preferences maintained after refreshing the page
+- Cross-tab preference synchronization
 
 ## Technologies Used
 
@@ -106,10 +110,11 @@ Lab2_Grade5/
 ### Accessibility Settings
 
 1. Open the Accessibility Settings panel.
-2. Select Small, Medium or Large text.
+2. Select Small, Medium, or Large text.
 3. Switch between Normal and High Contrast.
 4. Use keyboard navigation to operate the controls.
 5. Refresh the page to verify that preferences are saved.
+6. Use the Skip to main content link to navigate directly to the main content.
 
 ## Testing
 
@@ -118,6 +123,7 @@ The website has been tested for the following:
 - Feedback form validation and error messages
 - Live character counter
 - Successful form submission
+- Clear form functionality
 - Skills category filtering
 - A to Z and Z to A sorting
 - Combined filtering and sorting
@@ -126,6 +132,7 @@ The website has been tested for the following:
 - Keyboard accessibility
 - Accessibility preference persistence after refresh
 - Responsive layout on desktop and mobile-sized screens
+- Gallery images
 - JavaScript console errors
 
 Detailed testing information is available in [TESTING.md](https://github.com/Zaman-Kabir/Lab2_Grade5/blob/main/TESTING.md).
@@ -146,6 +153,9 @@ It does not send or store feedback on a server because this project does not use
 ## Version Control
 
 Git and GitHub were used to manage the project and track development through meaningful commits.
+
+**GitHub Repository:**  
+https://github.com/Zaman-Kabir/Lab2_Grade5
 
 ## Author
 
