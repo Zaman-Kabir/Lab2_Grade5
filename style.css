@@ -1,3 +1,4 @@
+
 :root {
     --primary-color: #b7d7a8;
     --dark-color: #2f4f3a;
@@ -43,6 +44,25 @@ nav a.active {
 nav a:focus {
     outline: 2px solid var(--light-color);
     outline-offset: 4px;
+}
+
+/* Skip navigation link for keyboard users */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    z-index: 1000;
+    padding: 12px 18px;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.skip-link:focus {
+    top: 10px;
+    outline: 3px solid var(--light-color);
+    outline-offset: 3px;
 }
 
 main {
@@ -250,5 +270,20 @@ footer {
 
     .gallery {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
