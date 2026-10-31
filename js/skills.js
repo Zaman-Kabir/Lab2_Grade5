@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const skillsContainer = document.getElementById("skillsContainer");
@@ -91,16 +92,20 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-        // Create skill cards dynamically.
+        // Clear previous skill cards.
         skillsContainer.innerHTML = "";
 
-        visibleSkills.forEach(function (skill) {
+        // Create skill cards dynamically.
+        visibleSkills.forEach(function (skill, index) {
 
             const card = document.createElement("article");
             card.className = "skill-card";
 
             const heading = document.createElement("h3");
+            heading.id = "skill-heading-" + index;
             heading.textContent = skill.name;
+
+            card.setAttribute("aria-labelledby", heading.id);
 
             const description = document.createElement("p");
             description.textContent = skill.description;
@@ -124,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
         noSkillsMessage.hidden = visibleSkills.length !== 0;
     }
 
+    // Update skills when the filter or sorting option changes.
     categoryFilter.addEventListener("change", updateSkills);
     skillSort.addEventListener("change", updateSkills);
 
