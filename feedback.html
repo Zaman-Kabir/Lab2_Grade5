@@ -1,9 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Share your feedback about my personal portfolio, web development projects and learning journey.">
 
     <title>Feedback Form | My Portfolio</title>
 
@@ -16,6 +18,9 @@
 </head>
 
 <body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header>
         <h1>My Portfolio</h1>
 
@@ -29,12 +34,15 @@
         </nav>
     </header>
 
-    <main>
-        <section>
-            <h2>Feedback Form</h2>
+    <main id="main-content">
+
+        <section aria-labelledby="feedbackHeading">
+            <h2 id="feedbackHeading">Feedback Form</h2>
+
             <p>Share your feedback about my portfolio.</p>
 
             <form id="feedbackForm" novalidate>
+
                 <label for="fullName">Full Name</label>
                 <input
                     type="text"
@@ -101,10 +109,12 @@
                 <button type="reset">Clear</button>
 
                 <p id="formStatus" role="status" aria-live="polite"></p>
+
             </form>
         </section>
 
         <section id="a11yPanel" aria-labelledby="a11yHeading">
+
             <h2 id="a11yHeading">Accessibility Settings</h2>
 
             <p>
@@ -135,10 +145,12 @@
 
             </div>
         </section>
+
     </main>
 
     <footer>
         <p>&copy; 2026 My Portfolio. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
