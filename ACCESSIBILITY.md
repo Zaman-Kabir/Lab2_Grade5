@@ -1,4 +1,3 @@
-
 # Accessibility Features
 
 ## 1. Overview
@@ -36,6 +35,8 @@ Users can navigate the accessibility controls using the keyboard.
 
 - Tab key: Move between controls.
 - Enter key: Activate the selected control.
+
+Keyboard navigation makes the accessibility panel easier to operate without a mouse.
 
 ## 6. Testing
 
