@@ -1,9 +1,28 @@
-
 document.addEventListener("DOMContentLoaded", function () {
+
     const textSizeButtons = document.querySelectorAll("[data-text-size]");
     const contrastButton = document.getElementById("contrastToggle");
 
+    // Safely read saved preferences.
+    function getSavedPreference(key, defaultValue) {
+        try {
+            return localStorage.getItem(key) || defaultValue;
+        } catch (error) {
+            return defaultValue;
+        }
+    }
+
+    // Safely save user preferences.
+    function savePreference(key, value) {
+        try {
+            localStorage.setItem(key, value);
+        } catch (error) {
+            // Accessibility settings will still work for the current page.
+        }
+    }
+
     function applySettings(textSize, highContrast) {
+
         document.body.classList.remove(
             "text-small",
             "text-medium",
@@ -32,15 +51,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 : "Turn on High Contrast";
         }
 
-        localStorage.setItem("portfolioTextSize", textSize);
-        localStorage.setItem(
+        savePreference("portfolioTextSize", textSize);
+
+        savePreference(
             "portfolioHighContrast",
             String(highContrast)
         );
     }
 
-    const savedSize = localStorage.getItem("portfolioTextSize");
-    const savedContrast = localStorage.getItem("portfolioHighContrast");
+    // Load saved preferences.
+    const savedSize = getSavedPreference(
+        "portfolioTextSize",
+        "medium"
+    );
+
+    const savedContrast = getSavedPreference(
+        "portfolioHighContrast",
+        "false"
+    );
 
     let currentSize = ["small", "medium", "large"].includes(savedSize)
         ? savedSize
@@ -48,19 +76,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let currentContrast = savedContrast === "true";
 
+    // Handle text size buttons.
     textSizeButtons.forEach(function (button) {
+
         button.addEventListener("click", function () {
+
             currentSize = button.dataset.textSize;
+
+            if (!["small", "medium", "large"].includes(currentSize)) {
+                currentSize = "medium";
+            }
+
             applySettings(currentSize, currentContrast);
         });
     });
 
+    // Handle contrast button.
     if (contrastButton) {
+
         contrastButton.addEventListener("click", function () {
+
             currentContrast = !currentContrast;
+
             applySettings(currentSize, currentContrast);
         });
     }
 
+    // Apply preferences when the page loads.
     applySettings(currentSize, currentContrast);
+
 });
