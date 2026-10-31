@@ -1,7 +1,11 @@
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const textSizeButtons = document.querySelectorAll("[data-text-size]");
     const contrastButton = document.getElementById("contrastToggle");
+
+    // Available text sizes.
+    const validTextSizes = ["small", "medium", "large"];
 
     // Safely read saved preferences.
     function getSavedPreference(key, defaultValue) {
@@ -17,10 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             localStorage.setItem(key, value);
         } catch (error) {
-            // Accessibility settings will still work for the current page.
+            // Settings will still work for the current page.
         }
     }
 
+    // Apply accessibility settings.
     function applySettings(textSize, highContrast) {
 
         document.body.classList.remove(
@@ -33,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.classList.toggle("high-contrast", highContrast);
 
+        // Update text size button states.
         textSizeButtons.forEach(function (button) {
             button.setAttribute(
                 "aria-pressed",
@@ -40,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
         });
 
+        // Update contrast button state and label.
         if (contrastButton) {
             contrastButton.setAttribute(
                 "aria-pressed",
@@ -51,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 : "Turn on High Contrast";
         }
 
+        // Save preferences safely.
         savePreference("portfolioTextSize", textSize);
-
         savePreference(
             "portfolioHighContrast",
             String(highContrast)
@@ -70,10 +77,12 @@ document.addEventListener("DOMContentLoaded", function () {
         "false"
     );
 
-    let currentSize = ["small", "medium", "large"].includes(savedSize)
+    // Validate saved text size.
+    let currentSize = validTextSizes.includes(savedSize)
         ? savedSize
         : "medium";
 
+    // Validate saved contrast preference.
     let currentContrast = savedContrast === "true";
 
     // Handle text size buttons.
@@ -81,13 +90,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         button.addEventListener("click", function () {
 
-            currentSize = button.dataset.textSize;
+            const selectedSize = button.dataset.textSize;
 
-            if (!["small", "medium", "large"].includes(currentSize)) {
-                currentSize = "medium";
+            if (validTextSizes.includes(selectedSize)) {
+                currentSize = selectedSize;
+                applySettings(currentSize, currentContrast);
             }
-
-            applySettings(currentSize, currentContrast);
         });
     });
 
