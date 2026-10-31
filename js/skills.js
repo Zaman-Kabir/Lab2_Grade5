@@ -6,7 +6,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const skillCount = document.getElementById("skillCount");
     const noSkillsMessage = document.getElementById("noSkillsMessage");
 
-    // All skills stored as JavaScript objects
+    // Stop if the required elements are not available.
+    if (
+        !skillsContainer ||
+        !categoryFilter ||
+        !skillSort ||
+        !skillCount ||
+        !noSkillsMessage
+    ) {
+        return;
+    }
+
+    // All skills stored as JavaScript objects.
     const allSkills = [
         {
             name: "HTML",
@@ -63,24 +74,24 @@ document.addEventListener("DOMContentLoaded", function () {
         const selectedCategory = categoryFilter.value;
         const selectedSort = skillSort.value;
 
-        // Filter skills by category
+        // Filter skills by category.
         let visibleSkills = allSkills.filter(function (skill) {
             return selectedCategory === "all" ||
                 skill.category === selectedCategory;
         });
 
-        // Sort skills by name
+        // Sort a copy without changing the original array.
         if (selectedSort === "az") {
-            visibleSkills.sort(function (a, b) {
+            visibleSkills = [...visibleSkills].sort(function (a, b) {
                 return a.name.localeCompare(b.name);
             });
         } else if (selectedSort === "za") {
-            visibleSkills.sort(function (a, b) {
+            visibleSkills = [...visibleSkills].sort(function (a, b) {
                 return b.name.localeCompare(a.name);
             });
         }
 
-        // Create skill cards dynamically
+        // Create skill cards dynamically.
         skillsContainer.innerHTML = "";
 
         visibleSkills.forEach(function (skill) {
@@ -95,6 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
             description.textContent = skill.description;
 
             const category = document.createElement("span");
+            category.className = "skill-category";
             category.textContent = skill.categoryName;
 
             card.appendChild(heading);
@@ -104,18 +116,18 @@ document.addEventListener("DOMContentLoaded", function () {
             skillsContainer.appendChild(card);
         });
 
-        // Update skill count
+        // Update skill count.
         skillCount.textContent =
             `Showing ${visibleSkills.length} of ${allSkills.length} skills`;
 
-        // Show message when no skills match
+        // Show message when no skills match.
         noSkillsMessage.hidden = visibleSkills.length !== 0;
     }
 
     categoryFilter.addEventListener("change", updateSkills);
     skillSort.addEventListener("change", updateSkills);
 
-    // Display all skills when the page loads
+    // Display all skills when the page loads.
     updateSkills();
 
 });
