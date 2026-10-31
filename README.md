@@ -1,4 +1,3 @@
-
 # My Portfolio Website
 
 ## About the Project
@@ -45,6 +44,29 @@ The website was developed using HTML, CSS and Vanilla JavaScript.
 - images/ – Website images
 - screenshots/ – Screenshots showing project features and testing
 - TESTING.md – Project testing checklist and results
+
+## How to Use the Features
+
+### Feedback Form
+
+1. Open the Feedback page.
+2. Enter the required information.
+3. Check the live character counter.
+4. Submit the form to see the validation or confirmation message.
+
+### Skills Showcase
+
+1. Open the Skills page.
+2. Select a skill category.
+3. Choose A to Z or Z to A sorting.
+4. Check the updated skill count.
+
+### Accessibility Settings
+
+1. Open the Accessibility panel.
+2. Select Small, Medium or Large text.
+3. Choose Normal Contrast or High Contrast.
+4. Refresh the page to check that preferences are saved.
 
 ## Testing
 
