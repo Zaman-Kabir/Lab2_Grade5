@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const skillsContainer = document.getElementById("skillsContainer");
@@ -17,6 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
         return;
     }
+
+    // Make skill count updates accessible to screen readers.
+    skillCount.setAttribute("aria-live", "polite");
+    skillCount.setAttribute("aria-atomic", "true");
 
     // All skills stored as JavaScript objects.
     const allSkills = [
@@ -84,16 +87,20 @@ document.addEventListener("DOMContentLoaded", function () {
         // Sort a copy without changing the original array.
         if (selectedSort === "az") {
             visibleSkills = [...visibleSkills].sort(function (a, b) {
-                return a.name.localeCompare(b.name);
+                return a.name.localeCompare(b.name, undefined, {
+                    sensitivity: "base"
+                });
             });
         } else if (selectedSort === "za") {
             visibleSkills = [...visibleSkills].sort(function (a, b) {
-                return b.name.localeCompare(a.name);
+                return b.name.localeCompare(a.name, undefined, {
+                    sensitivity: "base"
+                });
             });
         }
 
-        // Clear previous skill cards.
-        skillsContainer.innerHTML = "";
+        // Create a document fragment for efficient rendering.
+        const fragment = document.createDocumentFragment();
 
         // Create skill cards dynamically.
         visibleSkills.forEach(function (skill, index) {
@@ -118,8 +125,11 @@ document.addEventListener("DOMContentLoaded", function () {
             card.appendChild(description);
             card.appendChild(category);
 
-            skillsContainer.appendChild(card);
+            fragment.appendChild(card);
         });
+
+        // Replace previous cards in one DOM update.
+        skillsContainer.replaceChildren(fragment);
 
         // Update skill count.
         skillCount.textContent =
